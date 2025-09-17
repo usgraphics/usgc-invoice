@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{xcolor}
+\renewcommand{\familydefault}{\ttdefault}
+
+% Line item counter/generator
+\newcounter{linenum}
+\newcommand{\lineitem}[5]{%
+    % #1 = SKU, #2 = Description, #3 = Unit Rate, #4 = Count, #5 = Amount
+    \stepcounter{linenum}%
+    \thelinenum & #1 & #2 & & #3 & #4 & #5\\
+}
+
+\begin{document}
+% Header
+\noindent
+\begin{tabular}[t]{@{}l@{}}
+\textbf{U.S. Graphics Company} \\
+PO Box 32871 \\
+Phoenix, AZ 85064\\
+billing@usgraphics.com\\
+\end{tabular}%
+\hfill%
+\raisebox{\dimexpr-\height+\ht\strutbox}[0pt][0pt]{%
+\begin{tabular}{|ll|}
+\hline
+\textbf{Invoice \#:} & 102-AA7JHF2E \\
+\textbf{Invoice Created:} & Sep 16, 2025 \\
+\textbf{Invoice Due:} & Oct 15, 2025 \\
+\hline
+\end{tabular}}
+
+\vspace{20pt}
+
+% To Company
+\noindent\textbf{Billed To:}\\
+% Free form information provided by the customer (must escape for LaTeX)
+European Graphics GmbH.\\
+404 Nonexistentstrasse, Unit 2B,\\
+70128, Stuttgart, Germany\\
+P.O. No. 100-20358238\\
+VAT ID 82382101\\
+
+\vspace{10pt}
+
+\noindent
+\begin{tabular}{@{}ll@{}}
+Order No.: & TZR29K0 \\
+Checkout No.: & RXL02W4WKQZK6WN4NY5K \\
+Purchase Date: & Sep 16, 2025
+\end{tabular}
+
+\vspace{10pt}
+
+% Reset counter before table
+\setcounter{linenum}{0}
+
+% Invoice table with SKU column
+\begin{longtable}{r l p{3in} l r r r}
+\multicolumn{7}{c}{\textbf{Order TZR29K0}}\\
+\textbf{\#} & \textbf{SKU} & \textbf{Desc.} & & \textbf{Unit Rate} & \textbf{Count} & \textbf{Amount (USD)}\\
+\hline
+\lineitem{FX-400}{Berkeley Mono Startup}{495.00}{1}{495.00}
+\lineitem{MX-004}{Berkeley Mono Standard Fonts}{0.00}{1}{0.00}
+\lineitem{MX-017}{Berkeley Mono Ligatures}{0.00}{1}{0.00}
+\lineitem{TS-024}{Berkeley Mono Standard Compiler}{0.00}{1}{0.00}
+\lineitem{MX-014}{Berkeley Mono Web Fonts}{295.00}{1}{295.00}
+\lineitem{MX-020}{Berkeley Mono App License}{395.00}{1}{395.00}
+\hline
+\multicolumn{6}{r}{Subtotal} & 1185.00\\
+\multicolumn{6}{r}{Discount} & -90.00\\
+\hline
+\multicolumn{6}{r}{Net Sales Total} & 1095.00\\
+\multicolumn{6}{r}{Tax} & 0.00\\
+\hline\hline
+\multicolumn{6}{r}{\textbf{Total}} & \textbf{1095.00}\\
+\multicolumn{7}{r}{}\\
+\multicolumn{7}{c}{Invoice Status: P A I D}\\
+\multicolumn{7}{r}{}\\
+\hline
+\multicolumn{6}{r}{Paid} & -1095.00\\
+\hline
+\multicolumn{6}{r}{\textbf{Balance}} & \textbf{0.00}\\
+\end{longtable}
+
+% Footer
+\noindent
+\begin{tabular}{@{}ll@{}}
+Payment Method: & VISA x 4242\\
+\end{tabular}
+\center ***
+\center Thank you for your business.
+\center U.S. Graphics Company
+\end{document}
