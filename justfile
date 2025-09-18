@@ -7,11 +7,15 @@ default: build
 build:
     lualatex usgc-invoice.tex
 
+# Build the Quarto invoice PDF
+quarto:
+    quarto render uscg-invoice.qmd
+
 # Clean build artifacts
 clean:
     rm -f *.aux *.log *.out *.fls *.fdb_latexmk
 
-# Clean everything including PDF
+# Clean everything including PDFs
 clean-all: clean
     rm -f *.pdf
 
