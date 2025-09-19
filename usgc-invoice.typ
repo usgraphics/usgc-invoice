@@ -5,7 +5,7 @@
 
 #set table(stroke: none)
 // global option for all strokes, 0.4 seemed a bit light
-#let strokeThickness = 0.70pt
+#let strokeThickness = 0.50pt
 #set table.hline(stroke: strokeThickness)
 
 #set block(below: 2.3em)
@@ -65,7 +65,7 @@ VAT ID 82382101 \
 // in Typst yet
 #let doubleLine = stack(
   dir: ttb,
-  spacing: 4pt,
+  spacing: 2.5pt,
   line(length: 100%, stroke: strokeThickness),
   line(length: 100%, stroke: strokeThickness)
 )
