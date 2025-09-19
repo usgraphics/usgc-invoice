@@ -14,7 +14,7 @@
   columns: (1fr, 1fr), 
   align: (left, right),
   [
-    U.S. Graphics Company \
+    *U.S. Graphics Company* \
     PO Box 32871 \
     Phoenix, AZ 85064 \
     billing\@usgraphics.com
@@ -25,7 +25,8 @@
       column-gutter: 0.65em,
       row-gutter: 0.65em,
       [Invoice \#:], [INV-2025-001],
-      [Invoice Date:], [Sep 16, 2025]
+      [Invoice Date:], [Sep 16, 2025],
+      [Invoice Due:], [Oct 15, 2025]
      )
   ]
 )
@@ -95,7 +96,7 @@ VAT ID 82382101 \
   table.cell(colspan: 5, align: right)[Net Sales Total], "1095.00",
   offsetCell[Tax], "0.00",
   table.cell(colspan: 6, inset: 0pt, doubleLine),
-  offsetCell[Total], "1095.00",
+  offsetCell[*Total*], [*1095.00*],
 
   table.cell(colspan: 6, inset: (y: 25pt))[
     #align(center+horizon)[Invoice Status: P A I D]
